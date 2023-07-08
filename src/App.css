@@ -1,0 +1,157 @@
+main {
+  padding:20px;
+  display: flex;
+  background-color: #EEE2DE;
+  flex-direction: column;
+  align-items: center;
+}
+form {
+  color: black;
+  border: 2px solid black;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #EA906C;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-self: stretch;
+  width: 5px;
+  background-color: #0E2954;
+  justify-content: space-around;
+}
+
+.progressBox {
+  position: relative;
+  content: "";
+  width: 150px;
+  padding: 10px;
+  margin: 10px;
+  overflow-y: hidden;
+  border: 2px solid #2B2A4C;
+  height: 100px;
+  color: #B31312;
+  border-radius: 10px;
+  overflow: auto;
+  overflow-wrap: break-word;
+  --ps:0;
+  right: var(--ps);
+  transition: width 0.3s ease-out,height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.progressBox.left {
+  --ps:0px;
+}
+.progressBox.right {
+  --ps:240px;
+}
+
+.progressBox.visible {
+  opacity: 1;
+  height: 200px; /* Adjust this value to fit your content */
+  width: 210px;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #2B2A4C;
+  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.progressButton {
+  position: relative;
+  right: 7px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #2B2A4C;
+}
+
+.progressButton:hover {
+  background-color: #EEE2DE;
+}
+
+.progressButton.visible {
+  background-color: #EEE2DE;
+  border:2px solid #2B2A4C;
+}
+
+.progressContainer {
+  margin-top: 20px;
+}
+/* checkBox */
+.checkBoxContainer {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.checkBoxContainer input {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  background-color: #2B2A4C;
+  transition: background 1s;
+}
+.checkBoxContainer input:checked ~ .checkmark {
+  background-color: #B31312;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.checkBoxContainer input:checked ~ .checkmark:after {
+  display: inline-block;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: height 1s, width 1s;
+}
+.checkBoxContainer h3,button {
+  display: inline;
+  transition: color 1s;
+}
+.checkBoxContainer input:checked ~ h3{
+  color: #164B60;
+}
+.checkBoxContainer button {
+  position: relative;
+  bottom: 3px;
+  left: 5px;
+  background-color: #164B60;
+  border: 0;
+  border-radius: 5px;
+}
+.checkBoxContainer button:hover {
+  background-color: #B31312;
+}
